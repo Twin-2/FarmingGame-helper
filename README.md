@@ -1,6 +1,6 @@
 # Farming Game Helper
 
-This React app was built to help play the Farming Game. It is deployed on [Netlify here](link).
+This React app was built to help play the Farming Game. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
 
 ## Version 1.0.0
 
