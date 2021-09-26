@@ -13,9 +13,9 @@ function Harvest(props) {
     let operatingExpenseTable = [500, 500, 1000, 1000, 1500, 3000, 2000]
 
     useEffect(() => {
-        props.formData.crop ? harvestCalculation(props.formData.crop, props.formData.acres, props.formData.roll) : setHarvest(0)
+        props.formData.crop ? harvestCalculation(props.formData.crop, props.formData.acres, props.formData.roll) : harvestCalculation('hay', 0, 0)
         console.log(props.formData.crop)
-    }, [props.formData])
+    })
 
     function harvestCalculation(crop, acres, roll) {
         let harvestValue = harvestTable[crop][roll] * acres
