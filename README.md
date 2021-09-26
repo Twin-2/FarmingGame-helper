@@ -8,6 +8,8 @@ This React app was built to help play the Farming Game. It is deployed on [Netli
 
 ## Development Roadmap
 
+Add 'cut harvest in half'.
+
 Add OP's that factor in costs per acre.
 
 Add OP's that look at Harvester/Tractor ownership.
