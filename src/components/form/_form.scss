@@ -1,0 +1,22 @@
+Form {
+  background-color: rgb(138, 105, 68);
+  margin-bottom: 2vh;
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+  }
+
+  .form-control {
+    width: 10vw;
+    margin-right: 2vw;
+    background-color: tan;
+  }
+
+  input {
+    margin-right: 2vw;
+    background-color: tan;
+    border-radius: 2px;
+  }
+}

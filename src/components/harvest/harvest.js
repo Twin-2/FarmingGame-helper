@@ -26,12 +26,11 @@ function Harvest(props) {
     }
 
     return (
-        <>
+        <div className='harvest'>
             Harvest: {harvest}
-        </>
+        </div>
     )
 
 }
-
 
 export default Harvest
