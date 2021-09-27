@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            Farming Game
+            Farming Game Helper
         </header>
     )
 }
