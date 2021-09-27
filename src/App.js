@@ -1,6 +1,11 @@
-import Form from "./form";
-import Harvest from "./harvest";
+import Form from "./components/form/form";
+import Harvest from "./components/harvest/harvest";
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
 import { useState } from 'react';
+import './App.scss'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-bootstrap'
 
 function App() {
 
@@ -11,10 +16,12 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Harvest formData={formdata} />
+    <>
+      <Header />
       <Form formSubmit={handleFormSubmit} />
-    </div>
+      <Harvest formData={formdata} />
+      <Footer />
+    </>
   );
 }
 
