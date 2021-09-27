@@ -6,7 +6,7 @@ This React app was built to help play the Farming Game. It is deployed on [Netli
 
 1.0.0 - 9/26/2021 - Calculate your harvest income with a randomly generated Operating Expense. Current Operating Expenses are only number values 500-3000.
 
-## Development Roadmap
+## Development Goals
 
 Add ability to double harvest check.
 
