@@ -37,7 +37,7 @@ function FormComponent(props) {
                         onChange={(e) => setRoll(e.target.value)}
                         type='number'
                         placeholder='roll' />
-                    <Button type='submit' variant="warning">Submit</Button>
+                    <Button type='submit' variant="warning">Harvest!</Button>
                 </Form.Group>
             </Form>
         </>
