@@ -1,36 +1,41 @@
-import { useState, useEffect } from 'react';
+import harvestTable from "../../lib/harvestTable";
+// import { useState } from "react";
+
+const operatingExpenseTable = [500, 500, 1000, 1000, 1500, 3000, 2000];
 
 function Harvest(props) {
-    const [harvest, setHarvest] = useState(0);
+  //   const [testOp, setTestOp] = useState(0);
+  //   console.log(testOp);
 
-    let harvestTable = {
-        'grain': { 1: 75, 2: 150, 3: 250, 4: 375, 5: 525, 6: 700 },
-        'hay': { 1: 40, 2: 60, 3: 100, 4: 150, 5: 220, 6: 300 },
-        'cows': { 1: 140, 2: 200, 3: 280, 4: 380, 5: 500, 6: 750 },
-        'fruit': { 1: 400, 2: 700, 3: 1200, 4: 1800, 5: 2600, 6: 3500 }
-    }
+  function calculateHarvest(crop, acres, roll) {
+    let harvestValue = harvestTable[crop][roll] * acres;
+    console.log("harvest", harvestValue);
+    return harvestValue * props.modifier;
+  }
 
-    let operatingExpenseTable = [500, 500, 1000, 1000, 1500, 3000, 2000]
+  function income(crops, acres, roll) {
+    let op = operatingExpense();
+    const harvestCalcaulation = calculateHarvest(crops, acres, roll);
+    let income = harvestCalcaulation - op;
+    console.log("income", income);
+    return income;
+  }
 
-    useEffect(() => {
-        props.formData.crop ? harvestCalculation(props.formData.crop, props.formData.acres, props.formData.roll) : harvestCalculation('hay', 0, 0)
-        console.log(props.formData.crop)
-    })
+  function operatingExpense() {
+    let operatingExpense =
+      operatingExpenseTable[
+        Math.floor(Math.random() * (operatingExpenseTable.length - 0))
+      ];
+    console.log("OP", operatingExpense);
+    // setTestOp(operatingExpense);
+    return operatingExpense;
+  }
 
-    function harvestCalculation(crop, acres, roll) {
-        let harvestValue = harvestTable[crop][roll] * acres
-        console.log(harvestValue)
-        let operatingExpense = operatingExpenseTable[Math.floor(Math.random() * ((operatingExpenseTable.length) - 0))]
-        let income = harvestValue - operatingExpense
-        setHarvest(income)
-    }
+  const harvest = props.formData.crop
+    ? income(props.formData.crop, props.formData.acres, props.formData.roll)
+    : 0;
 
-    return (
-        <div className='harvest'>
-            Harvest: {harvest}
-        </div>
-    )
-
+  return <div className="harvest">Harvest: {harvest}</div>;
 }
 
-export default Harvest
+export default Harvest;
