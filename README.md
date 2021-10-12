@@ -2,9 +2,11 @@
 
 This React app was built to help play the Farming Game. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
 
-## Version 1.0.0
+## Version 1.0.1
 
 1.0.0 - 9/26/2021 - Calculate your harvest income with a randomly generated Operating Expense. Current Operating Expenses are only number values 500-3000.
+
+1.0.1 - 10/3/2021 - Added in ability to double or half your harvest.
 
 ## Development Goals
 
