@@ -8,10 +8,6 @@ This React app was built to help play the Farming Game. It is deployed on [Netli
 
 ## Development Goals
 
-Add ability to double harvest check.
-
-Add 'cut harvest in half'.
-
 Add OP's that factor in costs per acre.
 
 Add OP's that look at Harvester/Tractor ownership.
