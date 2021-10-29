@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <a href="https://github.com/Twin-2/FarmingGame-helper/blob/main/README.md">
-        Development Roadmap{" "}
+        Development Roadmap
       </a>
     </footer>
   );
