@@ -1,6 +1,8 @@
+@import "../../lib/vars.scss";
+
 header {
-  background: tan;
-  color: rgb(124, 71, 47);
+  background: $lightBrown;
+  color: $darkBrown;
   height: 8vw;
   width: 100%;
   padding: 0;

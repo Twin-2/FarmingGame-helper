@@ -1,0 +1,18 @@
+@import "../../lib/vars.scss";
+
+.card {
+  background-color: $lightBrown;
+  //   text-align: center;
+  margin: $gutter;
+  // padding-bottom: 30px;
+
+  .card-text {
+    margin-bottom: 0;
+  }
+  .card-body {
+    background-color: $lightBrown;
+  }
+  .card-footer {
+    background-color: $darkBrown;
+  }
+}

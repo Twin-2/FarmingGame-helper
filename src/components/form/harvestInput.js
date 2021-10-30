@@ -27,7 +27,7 @@ function HarvestInput(props) {
   };
 
   return (
-    <>
+    <section>
       <Form onSubmit={(e) => formSubmit(e)}>
         <Form.Group>
           <Form.Control as="select" onChange={(e) => setCrop(e.target.value)}>
@@ -51,9 +51,6 @@ function HarvestInput(props) {
             type="number"
             placeholder="roll"
           />
-          <Button type="submit" variant="warning">
-            Harvest!
-          </Button>
         </Form.Group>
         <p>Harvest Modifier</p>
         <Form.Group onChange={(e) => props.setModifier(e.target.value)}>
@@ -103,8 +100,11 @@ function HarvestInput(props) {
             value="harvester"
           />
         </Form.Group>
+        <Button type="submit" variant="warning">
+          Harvest!
+        </Button>
       </Form>
-    </>
+    </section>
   );
 }
 
