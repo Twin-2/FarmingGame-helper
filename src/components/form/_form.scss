@@ -7,13 +7,11 @@ section {
 
     .form-group {
       display: flex;
-      flex-direction: row;
-      height: 40px;
+      flex-direction: column;
     }
 
     .form-control {
-      width: 10vw;
-      margin-right: 2vw;
+      width: 50%;
       background-color: tan;
     }
 
@@ -22,5 +20,51 @@ section {
       background-color: tan;
       border-radius: 2px;
     }
+  }
+
+  .cropsInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
+
+    .col-12 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    input {
+      width: 30%;
+    }
+  }
+  .modifyerInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .opInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #selectCrop {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+    // align-items: center;
   }
 }

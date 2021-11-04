@@ -11,8 +11,10 @@
   }
   .card-body {
     background-color: $lightBrown;
+    display: flex;
+    height: 100%;
   }
   .card-footer {
-    background-color: $darkBrown;
+    background-color: $lightBrown;
   }
 }

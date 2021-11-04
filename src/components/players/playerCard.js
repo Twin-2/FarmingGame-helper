@@ -6,20 +6,13 @@ import { Card } from "react-bootstrap";
 function Player(props) {
   const [player, setPlayer] = useState({});
   const [modifier, setModifier] = useState(1);
-  // console.log(modifier);
-  const handleFormSubmit = (formData) => {
-    setPlayer(formData);
-  };
 
   return (
     <Card>
-      <Card.Header>{props.name}</Card.Header>
+      <Card.Header>Farmer {props.name}</Card.Header>
       <Card.Body>
         <Card.Text>
-          <HarvestInput
-            formSubmit={handleFormSubmit}
-            setModifier={setModifier}
-          />
+          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} />
         </Card.Text>
       </Card.Body>
       <Card.Footer>

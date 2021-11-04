@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <Header />
-      <Form onSubmit={(e) => addPlayer(e)}>
+      <Form className="addName" onSubmit={(e) => addPlayer(e)}>
         <Form.Label>Name:</Form.Label>
         <Form.Control id="name" type="text" placeholder="Player1" />
         <Button type="submit" variant="warning">
@@ -26,9 +26,9 @@ function App() {
         </Button>
       </Form>
       <Container>
-        <Row>
+        <Row className="playerCards">
           {players.map((player) => (
-            <Col xs={12} lg={6}>
+            <Col xs={12} lg={4}>
               <Player name={player} />
             </Col>
           ))}
