@@ -17,6 +17,7 @@ This React app was built to help play the Farming Game. It is deployed on [Netli
 - Expand cards to hold total wealth. Appropriately subtracting and adding when you harvest and buy property.
 - Change crop acres input to be individual up and down buttons rather than an input type number.
 - Create a database connection for saving progress.
+- - Fix player card deletion to be by ID rather than name.
 
 ---
 
