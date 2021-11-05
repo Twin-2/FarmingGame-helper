@@ -1,0 +1,24 @@
+@import "../../lib/vars.scss";
+
+.card {
+  background-color: $lightBrown;
+  margin: $gutter;
+  margin-bottom: 40px;
+
+  .card-text {
+    margin-bottom: 0;
+  }
+  .card-body {
+    background-color: $lightBrown;
+    display: flex;
+    height: 100%;
+  }
+  .card-footer {
+    background-color: $lightBrown;
+  }
+  .removePlayer {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}

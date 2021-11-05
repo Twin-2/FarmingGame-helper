@@ -18,7 +18,7 @@ export default function operatingExpense(player) {
       Math.floor(Math.random() * (operatingExpenseTable.length - 0))
     ];
   console.log("raw OP", operatingExpense);
-  console.log(typeof parseInt(player.acres));
+  console.log(typeof parseInt(player.crops[player.crop]));
   switch (operatingExpense) {
     case "noHarvester":
       if (!player.equipment.harvester) {
@@ -35,7 +35,7 @@ export default function operatingExpense(player) {
     case "debt":
       return player.debt * 0.1;
     case "acres":
-      return parseInt(player.acres * 100);
+      return parseInt(player.crops[player.crop] * 100);
     default:
       return operatingExpense;
   }

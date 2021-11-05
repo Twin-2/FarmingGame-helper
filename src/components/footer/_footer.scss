@@ -1,9 +1,11 @@
 footer {
   background-color: tan;
   position: fixed;
+  height: 30px;
   bottom: 0;
   width: 100%;
   text-align: center;
+  border-top: 1px solid #444;
 }
 
 a:link {

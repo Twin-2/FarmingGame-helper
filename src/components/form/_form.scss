@@ -1,22 +1,74 @@
-Form {
-  background-color: rgb(138, 105, 68);
-  margin-bottom: 2vh;
+@import "../../lib/vars.scss";
 
-  .form-group {
+section {
+  Form {
+    background-color: $lightBrown;
+    margin-bottom: 2vh;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-control {
+      width: 50%;
+      background-color: tan;
+    }
+
+    input {
+      margin-right: 2vw;
+      background-color: tan;
+      border-radius: 2px;
+    }
+  }
+
+  .cropsInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
+
+    .col-12 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    input {
+      width: 30%;
+    }
+  }
+  .modifyerInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .opInput {
+    border: 1px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 3px;
+    height: 100%;
+    display: flex;
+    .form-group {
+      flex: 1;
+    }
+  }
+
+  #selectCrop {
     flex-direction: row;
-    height: 40px;
-  }
-
-  .form-control {
-    width: 10vw;
-    margin-right: 2vw;
-    background-color: tan;
-  }
-
-  input {
-    margin-right: 2vw;
-    background-color: tan;
-    border-radius: 2px;
+    justify-content: space-between;
+    padding-top: 5px;
+    .form-control {
+      background-color: $darkBrown;
+      color: ivory;
+    }
   }
 }
