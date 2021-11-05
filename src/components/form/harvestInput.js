@@ -125,14 +125,6 @@ function HarvestInput(props) {
         </Form.Group>
         <Form.Label>Operating Expense Modifiers: </Form.Label>
         <div className="opInput">
-          <Form.Group>
-            <Form.Control
-              as="input"
-              placeholder="debt"
-              name="debt"
-              onChange={(e) => setDebt(e.target.value)}
-            />
-          </Form.Group>
           <Form.Group onClick={(e) => handleEquipmentSet(e)}>
             <Form.Check
               inline
@@ -147,6 +139,14 @@ function HarvestInput(props) {
               name="harvester"
               type="checkbox"
               value="harvester"
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              as="input"
+              placeholder="debt"
+              name="debt"
+              onChange={(e) => setDebt(e.target.value)}
             />
           </Form.Group>
         </div>

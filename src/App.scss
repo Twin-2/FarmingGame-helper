@@ -4,20 +4,17 @@
 @import "./components/form/form.scss";
 @import "./components/harvest/harvest";
 @import "./components/players/playerCard.scss";
+@import "./components/addPlayerForm/addPlayerForm.scss";
 html,
 body {
   height: 100%;
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
   font-family: Copperplate, sans-serif;
   background-color: rgb(138, 105, 68);
   min-width: 500px;
-  overflow: auto;
 }
-
-// body {
-//   background-color: rgb(138, 105, 68);
-//   width: 100%;
 
 #root {
   background-color: rgb(138, 105, 68);
@@ -29,14 +26,5 @@ body {
 
   .playerCards {
     height: 500px;
-  }
-  .addName {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 30px;
-    button {
-      width: 100%;
-    }
   }
 }

@@ -57,14 +57,18 @@ section {
     padding: 3px;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    .form-group {
+      flex: 1;
+    }
   }
 
   #selectCrop {
     flex-direction: row;
     justify-content: space-between;
     padding-top: 5px;
-    // align-items: center;
+    .form-control {
+      background-color: $darkBrown;
+      color: ivory;
+    }
   }
 }

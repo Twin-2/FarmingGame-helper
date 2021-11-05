@@ -1,0 +1,13 @@
+@import "../../lib/vars.scss";
+
+.addName {
+  text-align: center;
+  display: flex;
+  margin-left: $gutter * 3;
+  button {
+    width: 35%;
+  }
+  input {
+    width: 50%;
+  }
+}

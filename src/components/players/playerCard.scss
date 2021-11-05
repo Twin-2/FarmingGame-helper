@@ -2,9 +2,8 @@
 
 .card {
   background-color: $lightBrown;
-  //   text-align: center;
   margin: $gutter;
-  // padding-bottom: 30px;
+  margin-bottom: 40px;
 
   .card-text {
     margin-bottom: 0;
@@ -16,5 +15,10 @@
   }
   .card-footer {
     background-color: $lightBrown;
+  }
+  .removePlayer {
+    position: absolute;
+    right: 5px;
+    top: 5px;
   }
 }

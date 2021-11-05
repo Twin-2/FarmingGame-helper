@@ -1,7 +1,7 @@
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import AddPlayer from "./components/addPlayerForm/addPlayerForm";
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Player from "./components/players/playerCard";
 import "./App.scss";
@@ -13,23 +13,26 @@ function App() {
     e.preventDefault();
     console.log(e.target.name.value);
     setPlayers([...players, e.target.name.value]);
+    e.target.reset();
+  }
+
+  function removePlayer(name) {
+    setPlayers(players.filter((player) => player != name));
   }
 
   return (
     <>
       <Header />
-      <Form className="addName" onSubmit={(e) => addPlayer(e)}>
-        <Form.Label>Name:</Form.Label>
-        <Form.Control id="name" type="text" placeholder="Player1" />
-        <Button type="submit" variant="warning">
-          Add Player
-        </Button>
-      </Form>
       <Container>
+        <Row className="justify-content-md-center">
+          <Col xs="auto" md="auto" lg="auto">
+            <AddPlayer addPlayer={addPlayer} />
+          </Col>
+        </Row>
         <Row className="playerCards">
           {players.map((player) => (
-            <Col xs={12} lg={4}>
-              <Player name={player} />
+            <Col xs={12} lg={4} md={6}>
+              <Player name={player} removePlayer={removePlayer} />
             </Col>
           ))}
         </Row>
