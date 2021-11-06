@@ -6,7 +6,7 @@ David Whitmore
 
 ## About
 
-This React app was built to help play The Farming Game. It will handle your harvest calulations, including operating expenses and your harvest roll, so you can just keep enjoying the game. Have as many player cards as you would like, each having their own card that tracks their farm acres, so you aren't limited by the game board size. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
+This React app was built to help play The Farming Game. It will handle your harvest calulations, including operating expenses and your harvest roll, so you can just keep enjoying the game. Have as many player cards as you would like, each keeping tracks of their farm acres, so you aren't limited by the game board size. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
 
 ## Version 1.3.0
 
