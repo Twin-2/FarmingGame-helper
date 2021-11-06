@@ -1,5 +1,9 @@
 # Farming Game Helper
 
+## Contributers
+
+David Whitmore
+
 This React app was built to help play the Farming Game. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
 
 ## Version 1.3.0
