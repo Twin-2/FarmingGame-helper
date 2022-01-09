@@ -18,6 +18,8 @@ This React app was built to help play The Farming Game. It will handle your harv
 
 1.3.0 - 11/4/2021 - Added player cards so you can add seperate cards for everyone that is playing. Each player card individually tracks acres for each type of harvest as well as modifiers like doubles and equipment. You can also remove players.
 
+1.3.1 - 1/9/2022 - Added a modal with a brief explination of how to use the app.
+
 ## Development Goals
 
 - Expand cards to hold total wealth. Appropriately subtracting and adding when you harvest and buy property.
