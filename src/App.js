@@ -1,13 +1,15 @@
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import AddPlayer from "./components/addPlayerForm/addPlayerForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Player from "./components/players/playerCard";
+import IntroductionModal from "./components/modals/introductionModal";
 import "./App.scss";
 
 function App() {
   const [players, setPlayers] = useState([]);
+  const [showInstructionsModal, setShowInstructionModal] = useState(false);
 
   function addPlayer(e) {
     e.preventDefault();
@@ -20,9 +22,16 @@ function App() {
     setPlayers(players.filter((player) => player != name));
   }
 
+  useEffect(() => {
+    setShowInstructionModal(true);
+  }, []);
   return (
     <>
-      <Header />
+      <Header setShowInstruction={setShowInstructionModal} />
+      <IntroductionModal
+        showInstructions={showInstructionsModal}
+        setShowInstructions={setShowInstructionModal}
+      />
       <Container>
         <Row className="justify-content-md-center">
           <Col xs="auto" md="auto" lg="auto">
