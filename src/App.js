@@ -19,7 +19,7 @@ function App() {
   }
 
   function removePlayer(name) {
-    setPlayers(players.filter((player) => player != name));
+    setPlayers(players.filter((player) => player !== name));
   }
 
   useEffect(() => {
