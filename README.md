@@ -26,6 +26,7 @@ This React app was built to help play The Farming Game. It will handle your harv
 - Change crop acres input to be individual up and down buttons rather than an input type number.
 - Create a database connection for saving progress.
 - Fix player card deletion to be by ID rather than name.
+- Migrate to MUI.
 
 ---
 
