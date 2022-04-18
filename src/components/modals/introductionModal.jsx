@@ -9,7 +9,7 @@ function IntroductionModal(props) {
 
   return (
     <>
-      <Modal show={props.showInstructions} onHide={handleClose}>
+      <Modal show={props.showInstructions} onHide={handleClose} animation={false}>
         <Modal.Header>
           <Modal.Title>How to use this Helper</Modal.Title>
         </Modal.Header>
