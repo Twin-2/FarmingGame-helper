@@ -8,7 +8,7 @@ David Whitmore
 
 This React app was built to help play The Farming Game. It will handle your harvest calulations, including operating expenses and your harvest roll, so you can just keep enjoying the game. Have as many player cards as you would like, each keeping tracks of their farm acres, so you aren't limited by the game board size. It is deployed on [Netlify here](https://farming-game-helper.netlify.app/).
 
-## Version 1.3.1
+## Version 1.3.2
 
 1.0.0 - 9/26/2021 - Calculate your harvest income with a randomly generated Operating Expense. Current Operating Expenses are only number values 500-3000.
 
@@ -19,6 +19,8 @@ This React app was built to help play The Farming Game. It will handle your harv
 1.3.0 - 11/4/2021 - Added player cards so you can add seperate cards for everyone that is playing. Each player card individually tracks acres for each type of harvest as well as modifiers like doubles and equipment. You can also remove players.
 
 1.3.1 - 1/9/2022 - Added a modal with a brief explination of how to use the app.
+
+1.3.2 - 11/13/2022 - Fixed security issues within dependacies.
 
 ## Development Goals
 
