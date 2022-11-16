@@ -12,7 +12,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
-    
+    "loader-utils": "^3.2.1",
     "sass": "^1.42.1",
     "web-vitals": "2.1.4"
   },
@@ -46,7 +46,8 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "loader-utils": "^3.2.1"
   },
     "overrides": {
       "async": "3.2.3",
