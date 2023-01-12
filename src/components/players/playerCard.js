@@ -19,7 +19,7 @@ function Player(props) {
             fill="currentColor"
             class="bi bi-x-lg"
             viewBox="0 0 16 16"
-            onClick={() => props.removePlayer(props.name)}
+            onClick={() => props.removePlayer(props.id)}
           >
             <path
               fill-rule="evenodd"

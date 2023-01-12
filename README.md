@@ -22,13 +22,15 @@ This React app was built to help play The Farming Game. It will handle your harv
 
 1.3.2 - 11/13/2022 - Fixed security issues within dependacies.
 
+1.3.2 - 1/11/2023 - Add uuid's to player cards for specific deletion
+
 ## Development Goals
 
 - Expand cards to hold total wealth. Appropriately subtracting and adding when you harvest and buy property.
 - Change crop acres input to be individual up and down buttons rather than an input type number.
 - Create a database connection for saving progress.
-- Fix player card deletion to be by ID rather than name.
 - Migrate to MUI.
+- Show die roll and operating expenses on card.
 
 ---
 

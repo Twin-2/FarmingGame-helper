@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Player from "./components/players/playerCard";
 import IntroductionModal from "./components/modals/introductionModal";
 import "./App.scss";
+import {v4 as uuidv4} from 'uuid';
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -13,13 +14,13 @@ function App() {
 
   function addPlayer(e) {
     e.preventDefault();
-    console.log(e.target.name.value);
-    setPlayers([...players, e.target.name.value]);
+    var name = e.target.name.value
+    setPlayers([...players, {name: name, id: uuidv4()}]);
     e.target.reset();
   }
 
-  function removePlayer(name) {
-    setPlayers(players.filter((player) => player !== name));
+  function removePlayer(id) {
+    setPlayers(players.filter((player) => player.id !== id));
   }
 
   useEffect(() => {
@@ -41,7 +42,7 @@ function App() {
         <Row className="playerCards">
           {players.map((player) => (
             <Col xs={12} lg={4} md={6}>
-              <Player name={player} removePlayer={removePlayer} />
+              <Player name={player.name} id={player.id} removePlayer={removePlayer} />
             </Col>
           ))}
         </Row>
