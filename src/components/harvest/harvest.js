@@ -19,12 +19,9 @@ function Harvest(props) {
 
   function income(crops, acres) {
     const roll = getRandomIntInclusive(1, 6);
-    console.log(roll);
     let op = operatingExpense(props.player);
-    console.log("OP", op);
     const harvestCalcaulation = calculateHarvest(crops, acres, roll);
     let income = harvestCalcaulation - op;
-    console.log("income", income);
     setHarvest(income);
   }
 
