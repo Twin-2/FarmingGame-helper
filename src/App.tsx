@@ -19,14 +19,14 @@ export type Player = {
   totalWealth: number
 };
 
-type Crops = {
+export type Crops = {
   hay: number;
   grain: number;
   fruit: number;
   cows: number;
 }
 
-type Equipment = {
+export  type Equipment = {
   tractor: boolean;
   harvester: boolean;
 }
