@@ -1,4 +1,4 @@
-import { Player } from "../App";
+import { Player, Crops } from "../App";
 
 const operatingExpenseTable = [
   500,
@@ -25,7 +25,7 @@ const operatingExpenseTable = [
   "acres",
 ];
 
-export default function operatingExpense(player:Player, cropToHarvest: string):number {
+export default function operatingExpense(player:Player, cropToHarvest: keyof Crops):number {
   let operatingExpense =
     operatingExpenseTable[
       Math.floor(Math.random() * (operatingExpenseTable.length - 0))

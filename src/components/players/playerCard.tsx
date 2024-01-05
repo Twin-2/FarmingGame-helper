@@ -1,12 +1,18 @@
-import React from "react";
 import HarvestInput from "../form/harvestInput";
 import Harvest from "../harvest/harvest";
 import { useState } from "react";
 import { Card } from "react-bootstrap";
+import { Player} from "../../App";
 
-function Player(props) {
-  const [player, setPlayer] = useState({});
-  const [modifier, setModifier] = useState(1);
+type PlayerProps = {
+  name: string;
+  id: string;
+  removePlayer: (id: string)=> void;
+}
+
+export const PlayerCard = (props: PlayerProps) => {
+  const [player, setPlayer] = useState<Player | undefined>(undefined);
+  const [modifier, setModifier] = useState<1 | .5 | 2>(1);
 
   return (
     <Card>
@@ -39,10 +45,9 @@ function Player(props) {
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Harvest player={player} modifier={modifier} />
+        {/* Still need to track down the correct input for here */}
+       {player && <Harvest player={player} modifier={modifier} cropToHarvest="hay"/>}
       </Card.Footer>
     </Card>
   );
 }
-
-export default Player;

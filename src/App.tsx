@@ -1,9 +1,9 @@
-import Header from "./components/header/header";
+import {Header} from "./components/header/header";
 import Footer from "./components/footer/footer";
 import AddPlayer from "./components/addPlayerForm/addPlayerForm";
 import { useState, useEffect, ReactEventHandler, SyntheticEvent } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Player from "./components/players/playerCard";
+import {PlayerCard} from "./components/players/playerCard";
 import IntroductionModal from "./components/modals/introductionModal";
 import "./App.scss";
 import {v4 as uuidv4} from 'uuid';
@@ -66,7 +66,7 @@ function App() {
         <Row className="playerCards">
           {players.map((player) => (
             <Col xs={12} lg={4} md={6}>
-              <Player name={player.name} id={player.id} removePlayer={removePlayer} />
+              <PlayerCard name={player.name} id={player.id} removePlayer={removePlayer} />
             </Col>
           ))}
         </Row>
