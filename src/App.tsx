@@ -1,7 +1,7 @@
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import AddPlayer from "./components/addPlayerForm/addPlayerForm";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactEventHandler, SyntheticEvent } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Player from "./components/players/playerCard";
 import IntroductionModal from "./components/modals/introductionModal";
@@ -35,14 +35,15 @@ function App() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [showInstructionsModal, setShowInstructionModal] = useState<boolean>(false);
 
-  function addPlayer(e) {
+  function addPlayer(e: React.BaseSyntheticEvent) {
+    console.log(e)
     e.preventDefault();
     var name = e.target.name.value;
     setPlayers([...players, initalizePlayer(name, uuidv4())]);
     e.target.reset();
   }
 
-  function removePlayer(id) {
+  function removePlayer(id: string) {
     setPlayers(players.filter((player) => player.id !== id));
   }
 
