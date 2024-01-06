@@ -1,4 +1,4 @@
-import {Header} from "./components/header/header";
+import { Header } from "./components/header/header";
 import Footer from "./components/footer/footer";
 import AddPlayer from "./components/addPlayerForm/addPlayerForm";
 import { useState, useEffect, ReactEventHandler, SyntheticEvent } from "react";

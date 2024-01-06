@@ -1,4 +1,4 @@
-import { PlayerCard } from "../../App"
+import { Player } from "../../App"
 
 export const initalizePlayer = (name: string, id:any): Player => {
     return {
