@@ -22,7 +22,9 @@ This React app was built to help play The Farming Game. It will handle your harv
 
 1.3.2 - 11/13/2022 - Fixed security issues within dependacies.
 
-1.3.2 - 1/11/2023 - Add uuid's to player cards for specific deletion
+1.3.2 - 1/11/2023 - Add uuid's to player cards for specific deletion.
+
+1.4.1 - 1/5/2024 - Adding in types for readability.
 
 ## Development Goals
 
