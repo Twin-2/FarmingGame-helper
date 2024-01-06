@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
+import { Player } from "../../App";
 
-function HarvestInput(props) {
+type HarvestInputProps = {
+  setPlayer: React.Dispatch<React.SetStateAction<Player | undefined>>
+  setModifier: React.Dispatch<React.SetStateAction<2 | 1 | 0.5>>
+}
+
+function HarvestInput(props: HarvestInputProps) {
   const [crop, setCrop] = useState("hay");
   const [acresHay, setAcresHay] = useState(10);
   const [acresGrain, setAcresGrain] = useState(10);
@@ -14,11 +20,11 @@ function HarvestInput(props) {
     harvester: false,
   });
 
-  const formSubmit = (e) => {
+  const formSubmit = (e:React.BaseSyntheticEvent) => {
     e.preventDefault();
   };
 
-  const handleEquipmentSet = (e) => {
+  const handleEquipmentSet = (e:React.BaseSyntheticEvent) => {
     if (e.target.value === "tractor") {
       setEquipment({ ...equipment, tractor: !equipment[e.target.value] });
     } else {
@@ -27,7 +33,7 @@ function HarvestInput(props) {
   };
 
   useEffect(() => {
-    let profile = {
+    let profile:Pick<Player, "crops" | "equipment" | "debt"> = {
       crops: {
         hay: acresHay,
         grain: acresGrain,
@@ -36,7 +42,6 @@ function HarvestInput(props) {
       },
       equipment: equipment,
       debt: debt,
-      crop: crop,
     };
     props.setPlayer(profile);
   }, [crop, acresCows, acresFruit, acresHay, acresGrain, debt, equipment]);
@@ -51,7 +56,7 @@ function HarvestInput(props) {
               <Col xs={12}>
                 <label>Hay </label>
                 <input
-                  onChange={(e) => setAcresHay(e.target.value)}
+                  onChange={(e) => setAcresHay(parseInt(e.target.value))}
                   type="number"
                   name="hay"
                   placeholder="acres"
@@ -62,7 +67,7 @@ function HarvestInput(props) {
               <Col xs={12}>
                 <label>Grain </label>
                 <input
-                  onChange={(e) => setAcresGrain(e.target.value)}
+                  onChange={(e) => setAcresGrain(parseInt(e.target.value))}
                   type="number"
                   name="gain"
                   placeholder="acres"
@@ -73,8 +78,7 @@ function HarvestInput(props) {
               <Col xs={12}>
                 <label>Fruit </label>
                 <input
-                  as="textarea"
-                  onChange={(e) => setAcresFruit(e.target.value)}
+                  onChange={(e) => setAcresFruit(parseInt(e.target.value))}
                   type="number"
                   name="fruit"
                   placeholder="acres"
@@ -85,8 +89,7 @@ function HarvestInput(props) {
               <Col xs={12}>
                 <label>Cows </label>
                 <input
-                  as="textarea"
-                  onChange={(e) => setAcresCows(e.target.value)}
+                  onChange={(e) => setAcresCows(parseInt(e.target.value))}
                   type="number"
                   name="cows"
                   placeholder="acres"
@@ -146,7 +149,7 @@ function HarvestInput(props) {
               as="input"
               placeholder="debt"
               name="debt"
-              onChange={(e) => setDebt(e.target.value)}
+              onChange={(e) => setDebt(parseInt(e.target.value))}
             />
           </Form.Group>
         </div>
