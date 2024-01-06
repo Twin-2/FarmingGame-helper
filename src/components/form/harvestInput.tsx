@@ -27,9 +27,7 @@ function HarvestInput(props: HarvestInputProps) {
     e.preventDefault();
   };
 
-  // const handleCropUpdate = (e:React.BaseSyntheticEvent, cropType: string) => {
-  // };
-
+  
   const handleEquipmentSet = (e:React.BaseSyntheticEvent) => {
     console.log('test',e.target.value)
     if (e.target.value === "tractor") {
@@ -39,6 +37,8 @@ function HarvestInput(props: HarvestInputProps) {
     }
   };
 
+
+  // still need to refactor this to get less use states
   useEffect(() => {
     let profile:Player = {
       crops: {

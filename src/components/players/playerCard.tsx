@@ -45,7 +45,6 @@ export const PlayerCard = (props: PlayerProps) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        {/* Still need to track down the correct input for here */}
        {player && <Harvest player={player} modifier={modifier} cropToHarvest={cropToHarvest}/>}
       </Card.Footer>
     </Card>
