@@ -1,6 +1,6 @@
 import HarvestInput from "../form/harvestInput";
 import Harvest from "../harvest/harvest";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Crops, Player} from "../../App";
 
