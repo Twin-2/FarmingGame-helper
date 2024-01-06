@@ -66,7 +66,7 @@ function App() {
         <Row className="playerCards">
           {players.map((player) => (
             <Col xs={12} lg={4} md={6}>
-              <PlayerCard name={player.name} id={player.id} removePlayer={removePlayer} />
+                <PlayerCard player={player} removePlayer={removePlayer} />
             </Col>
           ))}
         </Row>

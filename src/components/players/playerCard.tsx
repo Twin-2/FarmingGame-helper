@@ -1,23 +1,23 @@
 import HarvestInput from "../form/harvestInput";
 import Harvest from "../harvest/harvest";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
-import { Player} from "../../App";
+import { Crops, Player} from "../../App";
 
 type PlayerProps = {
-  name: string;
-  id: string;
+  player: Player;
   removePlayer: (id: string)=> void;
 }
 
 export const PlayerCard = (props: PlayerProps) => {
-  const [player, setPlayer] = useState<Player | undefined>(undefined);
+  const [player, setPlayer] = useState<Player>(props.player);
   const [modifier, setModifier] = useState<1 | .5 | 2>(1);
-
+  const [cropToHarvest, setCropToHarvest] = useState<keyof Crops>('hay');
+  
   return (
     <Card>
       <Card.Header>
-        <div>Farmer {props.name}</div>
+        <div>Farmer {props.player.name}</div>
         <div className="removePlayer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export const PlayerCard = (props: PlayerProps) => {
             fill="currentColor"
             className="bi bi-x-lg"
             viewBox="0 0 16 16"
-            onClick={() => props.removePlayer(props.id)}
+            onClick={() => props.removePlayer(props.player.id)}
           >
             <path
               fill-rule="evenodd"
@@ -41,12 +41,12 @@ export const PlayerCard = (props: PlayerProps) => {
       </Card.Header>
       <Card.Body>
         <Card.Text>
-          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} />
+          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} player={player} cropToHarvest={cropToHarvest} setCropToHarvest={setCropToHarvest}/>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
         {/* Still need to track down the correct input for here */}
-       {player && <Harvest player={player} modifier={modifier} cropToHarvest="hay"/>}
+       {player && <Harvest player={player} modifier={modifier} cropToHarvest={cropToHarvest}/>}
       </Card.Footer>
     </Card>
   );
