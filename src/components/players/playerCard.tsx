@@ -2,24 +2,31 @@ import HarvestInput from "../form/harvestInput";
 import Harvest from "../harvest/harvest";
 import { useState } from "react";
 import { Card } from "react-bootstrap";
+import { Crops, Player} from "../../App";
 
-function Player(props) {
-  const [player, setPlayer] = useState({});
-  const [modifier, setModifier] = useState(1);
+type PlayerProps = {
+  player: Player;
+  removePlayer: (id: string)=> void;
+}
 
+export const PlayerCard = (props: PlayerProps) => {
+  const [player, setPlayer] = useState<Player>(props.player);
+  const [modifier, setModifier] = useState<1 | .5 | 2>(1);
+  const [cropToHarvest, setCropToHarvest] = useState<keyof Crops>('hay');
+  
   return (
     <Card>
       <Card.Header>
-        <div>Farmer {props.name}</div>
+        <div>Farmer {props.player.name}</div>
         <div className="removePlayer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-x-lg"
+            className="bi bi-x-lg"
             viewBox="0 0 16 16"
-            onClick={() => props.removePlayer(props.id)}
+            onClick={() => props.removePlayer(props.player.id)}
           >
             <path
               fill-rule="evenodd"
@@ -34,14 +41,12 @@ function Player(props) {
       </Card.Header>
       <Card.Body>
         <Card.Text>
-          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} />
+          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} player={player} cropToHarvest={cropToHarvest} setCropToHarvest={setCropToHarvest}/>
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Harvest player={player} modifier={modifier} />
+       {player && <Harvest player={player} modifier={modifier} cropToHarvest={cropToHarvest}/>}
       </Card.Footer>
     </Card>
   );
 }
-
-export default Player;

@@ -1,3 +1,5 @@
+import { Player, Crops } from "../App";
+
 const operatingExpenseTable = [
   500,
   500,
@@ -23,13 +25,11 @@ const operatingExpenseTable = [
   "acres",
 ];
 
-export default function operatingExpense(player) {
+export default function operatingExpense(player:Player, cropToHarvest: keyof Crops):number {
   let operatingExpense =
     operatingExpenseTable[
       Math.floor(Math.random() * (operatingExpenseTable.length - 0))
     ];
-  console.log("raw OP", operatingExpense);
-  console.log(typeof parseInt(player.crops[player.crop]));
   switch (operatingExpense) {
     case "noHarvester":
       if (!player.equipment.harvester) {
@@ -46,8 +46,9 @@ export default function operatingExpense(player) {
     case "debt":
       return player.debt * 0.1;
     case "acres":
-      return parseInt(player.crops[player.crop] * 100);
+      return player.crops[cropToHarvest] * 100;
+    // when only a number is left
     default:
-      return operatingExpense;
+      return operatingExpense as number;
   }
 }

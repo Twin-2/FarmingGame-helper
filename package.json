@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/uuid": "^9.0.7",
+    "react-scripts": "^5.0.1",
     "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.7.0",
     "node-sass": ">=7.0.3",
@@ -13,6 +15,7 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "sass": "^1.42.1",
+    "typescript": "^5.3.3",
     "uuid": "^9.0.0",
     "web-vitals": "2.1.4"
   },
@@ -41,11 +44,15 @@
     ]
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1",
-    "react-scripts": "^5.0.1"
+    "prettier": "^2.4.1"
   }
 }
