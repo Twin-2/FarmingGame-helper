@@ -21,4 +21,11 @@
     right: 5px;
     top: 5px;
   }
+  .cardHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 15px
+  }
 }
+

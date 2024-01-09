@@ -17,7 +17,10 @@ export const PlayerCard = (props: PlayerProps) => {
   return (
     <Card>
       <Card.Header>
-        <div>Farmer {props.player.name}</div>
+        <div className="cardHeader">
+          <div>Farmer {props.player.name}</div>
+          <div>${props.player.totalWealth}</div>
+        </div>
         <div className="removePlayer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
