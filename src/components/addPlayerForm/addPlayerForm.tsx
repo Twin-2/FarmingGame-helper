@@ -1,10 +1,14 @@
 import { Form, Button } from "react-bootstrap";
 import { useState,  } from "react";
 
-function AddPlayerForm(props) {
+type AddPlayerFormProps = {
+  addPlayer: (e:React.BaseSyntheticEvent) => void;
+}
+
+function AddPlayerForm(props: AddPlayerFormProps) {
   const [isNewPlayerNameValid, setIsNewPlayerNameValid] = useState(false)
 
-  const validatePlayerName = (name) => {
+  const validatePlayerName = (name: string) => {
     if(!name){
       setIsNewPlayerNameValid(true)
     }
@@ -14,7 +18,7 @@ function AddPlayerForm(props) {
   return (
     <div className="addNameForm">
       <Form className="addName" onSubmit={(e) => props.addPlayer(e)}>
-        <Form.Control id="name" type="text" placeholder="Player Name" class={isNewPlayerNameValid ? '.is-valid' : 'is-invalid'} onChange={(e)=> validatePlayerName(e.target.value)}/>
+        <Form.Control id="name" type="text" placeholder="Player Name" className={isNewPlayerNameValid ? '.is-valid' : 'is-invalid'} onChange={(e)=> validatePlayerName(e.target.value)}/>
         <Button type="submit" variant="warning" disabled={isNewPlayerNameValid}>
           Add Player
         </Button>
