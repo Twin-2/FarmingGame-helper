@@ -1,17 +1,19 @@
 import harvestTable, { Roll } from "../../lib/harvestTable";
 import operatingExpense from "../../lib/operatingExpense";
 import { Button } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Crops, Player } from "../../App";
+import { PlayerContext, PlayerContextType } from "../../context/playerContext";
 
 type HarvestProps = {
-  player: Player;
+  // setPlayer: React.Dispatch<React.SetStateAction<Player>>;
   cropToHarvest: keyof Crops;
   modifier: .5 | 1 | 2;
 };
 
 function Harvest(props: HarvestProps) {
   const [harvest, setHarvest] = useState(0);
+  const {player, setPlayer} = useContext(PlayerContext) as PlayerContextType;
 
   function getRandomIntInclusive(min:number, max:number) {
     min = Math.ceil(min);
@@ -24,19 +26,24 @@ function Harvest(props: HarvestProps) {
     return harvestValue * props.modifier;
   }
 
-  function income(crops: keyof Crops, acres: number) {
-    const roll = getRandomIntInclusive(1, 6) as keyof Roll;
-    let op = operatingExpense(props.player, props.cropToHarvest);
-    const harvestCalcaulation = calculateHarvest(crops, acres, roll);
-    let income = harvestCalcaulation - op;
-    setHarvest(income);
+  const updateTotalWealth = (income: number) => {
+    setPlayer({...player, totalWealth: player.totalWealth + income})
+    console.log('@@@@@', player.totalWealth)
   }
 
+  function income(crops: keyof Crops, acres: number) {
+    const roll = getRandomIntInclusive(1, 6) as keyof Roll;
+    let op = operatingExpense(player, props.cropToHarvest);
+    const harvestCalcaulation = calculateHarvest(crops, acres, roll);
+    let income = harvestCalcaulation - op;
+    updateTotalWealth(income);
+    setHarvest(income);
+  }
   return (
     <div className="harvest">
       <Button
         onClick={() =>
-          income(props.cropToHarvest, props.player.crops[props.cropToHarvest])
+          income(props.cropToHarvest, player.crops[props.cropToHarvest])
         }
         variant="warning"
       >

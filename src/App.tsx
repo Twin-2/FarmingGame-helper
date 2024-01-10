@@ -46,7 +46,7 @@ function App() {
   function removePlayer(id: string) {
     setPlayers(players.filter((player) => player.id !== id));
   }
-
+console.log(players)
   useEffect(() => {
     setShowInstructionModal(true);
   }, []);
@@ -65,7 +65,7 @@ function App() {
         </Row>
         <Row className="playerCards">
           {players.map((player) => (
-            <Col xs={12} lg={4} md={6}>
+            <Col xs={12} lg={4} md={6} key={player.id}>
                 <PlayerCard player={player} removePlayer={removePlayer} />
             </Col>
           ))}
