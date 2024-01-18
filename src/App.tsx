@@ -36,7 +36,6 @@ function App() {
   const [showInstructionsModal, setShowInstructionModal] = useState<boolean>(false);
 
   function addPlayer(e: React.BaseSyntheticEvent) {
-    console.log(e)
     e.preventDefault();
     var name = e.target.name.value;
     setPlayers([...players, initalizePlayer(name, uuidv4())]);
@@ -46,7 +45,6 @@ function App() {
   function removePlayer(id: string) {
     setPlayers(players.filter((player) => player.id !== id));
   }
-console.log(players)
   useEffect(() => {
     setShowInstructionModal(true);
   }, []);

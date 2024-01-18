@@ -28,7 +28,6 @@ function Harvest(props: HarvestProps) {
 
   const updateTotalWealth = (income: number) => {
     setPlayer({...player, totalWealth: player.totalWealth + income})
-    console.log('@@@@@', player.totalWealth)
   }
 
   function income(crops: keyof Crops, acres: number) {

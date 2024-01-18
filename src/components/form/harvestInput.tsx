@@ -12,7 +12,6 @@ type HarvestInputProps = {
 }
 
 function HarvestInput(props: HarvestInputProps) {
-  const [crop, setCrop] = useState(props.cropToHarvest);
   const [acresHay, setAcresHay] = useState(10);
   const [acresGrain, setAcresGrain] = useState(10);
   const [acresFruit, setAcresFruit] = useState(0);
@@ -29,7 +28,6 @@ function HarvestInput(props: HarvestInputProps) {
 
   
   const handleEquipmentSet = (e:React.BaseSyntheticEvent) => {
-    console.log('test',e.target.value)
     if (e.target.value === "tractor") {
       setEquipment({ ...equipment, tractor: !equipment[e.target.value as keyof Equipment] });
     } else {
@@ -54,7 +52,7 @@ function HarvestInput(props: HarvestInputProps) {
       totalWealth: props.player.totalWealth
     };
     props.setPlayer(profile);
-  }, [crop, acresCows, acresFruit, acresHay, acresGrain, debt, equipment]);
+  }, [acresCows, acresFruit, acresHay, acresGrain, debt, equipment]);
 
   return (
     <section>
@@ -165,7 +163,7 @@ function HarvestInput(props: HarvestInputProps) {
         </div>
         <Form.Group id="selectCrop">
           <Form.Label>Select crop to harvest: </Form.Label>
-          <Form.Control as="select" onChange={(e) => setCrop(e.target.value as  keyof Crops)}>
+          <Form.Control as="select" onChange={(e) => props.setCropToHarvest(e.target.value as  keyof Crops)}>
             <option value="hay">Hay</option>
             <option value="grain">Grain</option>
             <option value="fruit">Fruit</option>

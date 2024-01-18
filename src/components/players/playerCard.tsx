@@ -14,7 +14,7 @@ export const PlayerCard = (props: PlayerProps) => {
   const [player, setPlayer] = useState<Player>(props.player);
   const [modifier, setModifier] = useState<1 | .5 | 2>(1);
   const [cropToHarvest, setCropToHarvest] = useState<keyof Crops>('hay');
-  console.log('!!!!!', player.totalWealth)
+  console.log('playerCard', cropToHarvest)
   return (
     <PlayerContext.Provider value={{player, setPlayer}}>
       <Card>
