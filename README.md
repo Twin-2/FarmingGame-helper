@@ -26,13 +26,14 @@ This React app was built to help play The Farming Game. It will handle your harv
 
 1.4.1 - 1/5/2024 - Adding in types for readability.
 
+1.4.2 - 3/21/2025 - Adding details for harvest income.
+
 ## Development Goals
 
 - Expand cards to hold total wealth. Appropriately subtracting and adding when you harvest and buy property.
 - Change crop acres input to be individual up and down buttons rather than an input type number.
 - Create a database connection for saving progress.
 - Migrate to MUI.
-- Show die roll and operating expenses on card.
 
 ---
 
