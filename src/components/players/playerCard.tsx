@@ -41,7 +41,12 @@ export const PlayerCard = (props: PlayerProps) => {
       </Card.Header>
       <Card.Body>
         <Card.Text>
-          <HarvestInput setPlayer={setPlayer} setModifier={setModifier} player={player} cropToHarvest={cropToHarvest} setCropToHarvest={setCropToHarvest}/>
+          <HarvestInput 
+            setPlayer={setPlayer} 
+            setModifier={setModifier} 
+            player={player} 
+            cropToHarvest={cropToHarvest} 
+            setCropToHarvest={setCropToHarvest}/>
         </Card.Text>
       </Card.Body>
       <Card.Footer>

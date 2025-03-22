@@ -24,11 +24,12 @@ function Harvest(props: HarvestProps) {
     return harvestValue * props.modifier;
   }
 
-  function income(crops: keyof Crops, acres: number) {
+  function income(crop: keyof Crops, acres: number) {
     const roll = getRandomIntInclusive(1, 6) as keyof Roll;
     let op = operatingExpense(props.player, props.cropToHarvest);
-    const harvestCalcaulation = calculateHarvest(crops, acres, roll);
+    const harvestCalcaulation = calculateHarvest(crop, acres, roll);
     let income = harvestCalcaulation - op;
+    console.log('income', crop, roll, op, harvestCalcaulation)
     setHarvest(income);
   }
 
