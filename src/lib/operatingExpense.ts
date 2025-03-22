@@ -25,7 +25,7 @@ const operatingExpenseTable = [
   "acres",
 ];
 
-export default function operatingExpense(player:Player, cropToHarvest: keyof Crops):number {
+export default function calculateOperatingExpense(player:Player, cropToHarvest: keyof Crops):number {
   let operatingExpense =
     operatingExpenseTable[
       Math.floor(Math.random() * (operatingExpenseTable.length - 0))
