@@ -1,5 +1,5 @@
 import harvestTable, { Roll } from "../../lib/harvestTable";
-import operatingExpense from "../../lib/operatingExpense";
+import calculateOperatingExpense from "../../lib/operatingExpense";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { Crops, Player } from "../../App";
@@ -12,6 +12,9 @@ type HarvestProps = {
 
 function Harvest(props: HarvestProps) {
   const [harvest, setHarvest] = useState(0);
+  const [operatingExpense, setOperatingExpense] = useState<number>();
+  const [roll, setRoll] = useState<number>();
+  const [income, setIncome] = useState<number>();
 
   function getRandomIntInclusive(min:number, max:number) {
     min = Math.ceil(min);
@@ -24,11 +27,15 @@ function Harvest(props: HarvestProps) {
     return harvestValue * props.modifier;
   }
 
-  function income(crops: keyof Crops, acres: number) {
+  function calculateIncome(crop: keyof Crops, acres: number) {
     const roll = getRandomIntInclusive(1, 6) as keyof Roll;
-    let op = operatingExpense(props.player, props.cropToHarvest);
-    const harvestCalcaulation = calculateHarvest(crops, acres, roll);
+    setRoll(roll);
+    let op = calculateOperatingExpense(props.player, props.cropToHarvest);
+    setOperatingExpense(op);
+    const harvestCalcaulation = calculateHarvest(crop, acres, roll);
+    setIncome(harvestCalcaulation);
     let income = harvestCalcaulation - op;
+    console.log(`roll = ${roll}, O.E. = ${op}, harvest = ${harvestCalcaulation}`)
     setHarvest(income);
   }
 
@@ -36,13 +43,18 @@ function Harvest(props: HarvestProps) {
     <div className="harvest">
       <Button
         onClick={() =>
-          income(props.cropToHarvest, props.player.crops[props.cropToHarvest])
+          calculateIncome(props.cropToHarvest, props.player.crops[props.cropToHarvest])
         }
         variant="warning"
       >
         Harvest for {props.cropToHarvest}!
       </Button>
-      ${harvest}
+      <div className="harvestDetails">
+        Roll = {roll}, <br/>
+        Income = ${income},<br/>
+        Operating Expense = ${operatingExpense},<br/>
+        Harvest = ${harvest}
+      </div>
     </div>
   );
 }
